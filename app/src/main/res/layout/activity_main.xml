@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarStyle="outsideOverlay"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <com.inheritx.standardedittext.CustomFrameLayout
+            android:id="@+id/customLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:labelText="Title">
+
+            <com.inheritx.standardedittext.StandardEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"
+                android:hint="Placeholder"
+                android:text="@string/title" />
+
+        </com.inheritx.standardedittext.CustomFrameLayout>
+
+        <com.inheritx.standardedittext.CustomFrameLayout
+            android:id="@+id/customLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:animateLayoutChanges="true"
+            app:helperText="Working"
+            app:labelText="Code">
+
+            <com.inheritx.standardedittext.StandardEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"
+                android:text="@string/coupon_code" />
+        </com.inheritx.standardedittext.CustomFrameLayout>
+
+        <Button
+            android:id="@+id/error_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/test_error" />
+
+
+    </LinearLayout>
+
+</ScrollView>

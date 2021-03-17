@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="StandardEdittext">
+
+        <!--Texts-->
+        <attr name="labelText" format="string" />
+        <attr name="helperText" format="string" />
+
+        <!--Colors-->
+        <attr name="helperTextColor" format="color" />
+        <attr name="mCounterTextColor" format="color" />
+        <attr name="errorColor" format="color" />
+        <attr name="primaryColor" format="color" />
+        <attr name="secondaryColor" format="color" />
+        <attr name="layoutBackgroundColor" format="color" />
+
+
+        <!--Others-->
+        <attr name="enabled" format="boolean" />
+        <attr name="hasFocus" format="boolean" />
+        <attr name="showHint" format="boolean" />
+        <attr name="useSpacing" format="boolean" />
+        <attr name="rtl" format="boolean" />
+
+        <attr name="manualValidateError" format="boolean" />
+
+    </declare-styleable>
+
+</resources>
