@@ -67,7 +67,7 @@ public class CustomFrameLayout extends FrameLayout {
 
     protected int labelColor = -1;
     protected int labelTopMargin = -1;
-    protected int ANIMATION_DURATION = 100;
+    protected int ANIMATION_DURATION = 250; // Increased for smoother feel
     protected boolean onError = false;
     protected boolean activated = false;
 
@@ -681,7 +681,15 @@ public class CustomFrameLayout extends FrameLayout {
 
     public void setUseSpacing(boolean useSpacing) {
         this.useSpacing = useSpacing;
+        updateDimens(this.useSpacing);
     }
+
+    public void setRtl(boolean rtl) {
+        this.rtl = rtl;
+        // In a real library, we might need to re-inflate or swap layouts here.
+        // For the demo, we'll suggest a restart or handle it if possible.
+    }
+
 
     public String getLabelText() {
         return this.labelText;

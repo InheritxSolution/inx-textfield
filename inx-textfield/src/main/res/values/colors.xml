@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Primary Palette -->
+    <color name="st_primary">#6366F1</color> <!-- Indigo 500 -->
+    <color name="st_primary_dark">#4F46E5</color> <!-- Indigo 600 -->
+    
+    <!-- Secondary/Neutral -->
+    <color name="st_slate_50">#F8FAFC</color>
+    <color name="st_slate_200">#E2E8F0</color>
+    <color name="st_slate_500">#64748B</color>
+    <color name="st_slate_700">#334155</color>
+    <color name="st_slate_900">#0F172A</color>
 
-    <color name="color_red">#ff1744</color>
+    <!-- Semantic Colors -->
+    <color name="st_error">#EF4444</color> <!-- Rose 500 -->
+    <color name="st_success">#10B981</color> <!-- Emerald 500 -->
+    <color name="st_warning">#F59E0B</color> <!-- Amber 500 -->
 
+    <!-- Legacy Compatibility -->
+    <color name="color_red">#EF4444</color>
 </resources>

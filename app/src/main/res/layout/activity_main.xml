@@ -1,62 +1,220 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbarStyle="outsideOverlay"
+    android:background="@color/st_slate_50"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
 
-        <com.inheritx.standardedittext.CustomFrameLayout
-            android:id="@+id/customLayout1"
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="inx-textfield"
+            app:titleTextColor="@color/st_slate_900"
+            app:titleCentered="true" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:labelText="Title">
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <com.inheritx.standardedittext.StandardEditText
+            <!-- Hero Section -->
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:imeOptions="actionNext"
-                android:inputType="text"
-                android:maxLines="1"
-                android:hint="Placeholder"
-                android:text="@string/title" />
+                android:text="Premium Text Input Library"
+                android:textColor="@color/st_slate_900"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"/>
 
-        </com.inheritx.standardedittext.CustomFrameLayout>
-
-        <com.inheritx.standardedittext.CustomFrameLayout
-            android:id="@+id/customLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:animateLayoutChanges="true"
-            app:helperText="Working"
-            app:labelText="Code">
-
-            <com.inheritx.standardedittext.StandardEditText
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:imeOptions="actionNext"
-                android:inputType="text"
-                android:maxLines="1"
-                android:text="@string/coupon_code" />
-        </com.inheritx.standardedittext.CustomFrameLayout>
+                android:text="Modern, animated, and fully customizable text fields for Android."
+                android:textColor="@color/st_slate_500"
+                android:textSize="14sp"
+                android:layout_marginBottom="24dp"/>
 
-        <Button
-            android:id="@+id/error_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/test_error" />
+            <!-- Gallery Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gallery"
+                android:textColor="@color/st_slate_700"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"/>
 
+            <!-- Basic Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp">
 
-    </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-</ScrollView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Basic Input"
+                        android:textColor="@color/st_primary"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+
+                    <com.inheritx.standardedittext.CustomFrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:labelText="Full Name"
+                        app:primaryColor="@color/st_primary">
+
+                        <com.inheritx.standardedittext.StandardEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="John Doe"
+                            android:inputType="textPersonName" />
+
+                    </com.inheritx.standardedittext.CustomFrameLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Error State Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Error State"
+                        android:textColor="@color/st_error"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+
+                    <com.inheritx.standardedittext.CustomFrameLayout
+                        android:id="@+id/error_example_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:labelText="Email Address"
+                        app:helperText="Enter a valid email"
+                        app:errorColor="@color/st_error">
+
+                        <com.inheritx.standardedittext.StandardEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="invalid-email"
+                            android:inputType="textEmailAddress" />
+
+                    </com.inheritx.standardedittext.CustomFrameLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Playground Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Interactive Playground"
+                android:textColor="@color/st_slate_700"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/st_slate_200">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <com.inheritx.standardedittext.CustomFrameLayout
+                        android:id="@+id/playground_field"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        app:primaryColor="@color/st_primary">
+
+                        <com.inheritx.standardedittext.StandardEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </com.inheritx.standardedittext.CustomFrameLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/st_slate_200"
+                        android:layout_marginBottom="16dp"/>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switch_error"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Show Error State"
+                        android:textColor="@color/st_slate_700"/>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switch_spacing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Use Dense Spacing"
+                        android:textColor="@color/st_slate_700"/>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switch_enabled"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Enable Field"
+                        android:textColor="@color/st_slate_700"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
